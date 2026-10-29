@@ -1,6 +1,10 @@
 name: Pipeline de Ventas
 
 on:
+  push:
+    branches:
+      - ejercicio_pipeline_pablo
+
   workflow_dispatch:
     inputs:
       tests_seguridad:
@@ -8,6 +12,7 @@ on:
         type: boolean
         required: true
         default: true
+
 jobs:
   seguridad:
     name: CI y Seguridad
