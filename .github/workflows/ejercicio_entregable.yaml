@@ -27,7 +27,7 @@ jobs:
 
         
       - name: Escanear claves API
-        if: ${{ inputs.tests_seguridad }}
+        if: ${{ github.event_name == 'push' || inputs.tests_seguridad }}
         run: python3 escaneaAPI.py
 
   
